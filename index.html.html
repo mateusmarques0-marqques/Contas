@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Minhas Contas</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Minhas Contas">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAMK0lEQVR4nO3deVRU5xnH8XdYZi4KqKjIYpEtkSUmIiQKGMUFFZfAgEtMek5SY7olTTw2abqkKpqenKZbEtucpCeLbZqgKDuiSURAULBtAgZlERWMEZKIMGhmmGGYmf5hFwo+d+bO3Dvc2/4+f3n0nTvPga/D3WZQhc+NZwC34zHeA4B8IQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4gIQ4geY33AP+nvL29oiKjZs++c1ZYWGBgYGBg4NSAAI7TaDQatVpjsVjM5iGDYVCn013v6+vu7v7sypWOCxc6Ojr0eoPbhlSFz42XaNPvv/vnsLBvCH2UyWTKXr9x4MYNUWbI1mZt3/a0Ew/83SuvFhQWiTLDSBER4SnJyakpybExsd7egv9n2my2tvb2+obTDQ0NrW3tNptN9AlHkt0rh0ajWbtm9Xt5+13flEqlysnWur4d1/n4+KxIX67NzIyOjnJlOyqVKjYmJjYmZsujj+h0uqrqmsLi4s7OLpHGHE12cTDGtNqsvAP5VqvVxe3cm5Q4KyxMlJGcxnHcpo0bNj+4yXfiRHG3PHnyZG1WpjYrs7GpqbCo+ERtncViEfcp5LhDGjRjRmpqiuvbWZ+d7fpGXJGxamV+3nuPP7ZF9DJGSpg7d0/urrvnzBF9y3J85WCMrddqa2vrXNlCaEjIggULxJpHqIApU3707DMLxUh8HMnxlYMxlpg4Lzx8litbyNZmeXioxJpHkLjYmH3vvKX0Mphs42CMubIvyXHcmtUZIg7juMWL7t/7yssBU6aMy7OLS75xrFqxwukf1RkrV/r6+oo7jyOWLknbk5ur0Wjc/9RSkG8cPj4+GRmrnHvsuBzBLpg/f8fzPxuvn2VSkOkO6S052qxDBYVCT/UkJSa6uL/ihFlhYS/s3uXl5czX02q1NjadaWxqam1tu9rdrevvHzQaPTxUGrXGz99/+rRpISHB0dHRsTGz4+PinHsK58g6jpkzZ86/776G06cFPWrDencfwWo0mt25OzmOE/rAgRs38vMPlpUf7uvvH/VPFgszm4e/1ut7eno+bW5mH3zIGOM4Lilx3vJlyxampnKc5D+8ZB0HYywnWysojuDg4OQFydLNc1vf++63oyIjhT6qtLz8tdde/1qvd/whRqOx7uSpupOn/Pz81q1dsz5bGxgYKPR5HSfffY5bFsy/b2ZoqOPrc7K1bv6pHxUZmZ2VJeghRqNpx67cl371G0FljHTz5s338/Zveujhl1/ZO/ZVRyxyj0OlUmVrsxxczHGatW4/gn36qSc9PAR8GU0m0zPPPXe8qtr1pzabhw8VFm5++Jv5Bw8NW4Zd3+Aoco+DMbZ6dYaDP85Xuf0Ids5d8fMSEhxfb7PZdu3e09R0RsQZ9HrDq7//Q3PzWRG3eYss4ujtvc7zr74TJ65aucKR7eRo7RzBXuvtFTCWAzZt3Chofd7+A7V1J8WdQTqyiKO4tJR/gd3vOmMsMXFeREQ4z4KhoaGKI0cFDcZv2rSpi+5f6Pj67u6et97ZJ+IAUpNFHBVHjhoMfDc4RUSE2331tnsN9qPKyoGBAcHD0dIWLRa0t/HHN980mUwiDiA1WcRhMBgqjtr5P70+h+/FIzgoKDXFzoWuggKR7+xKW7zI8cVXu7tF2Ql1J1nEwRgrKCziPxO6MDV1xgzymN7uNdjm5rPnOzqcn28MHx+fu+8WcAtFxZGjrt++5GZyiePKlc//+re/8yzw8PCgTidwnGbtmtX82z9YUOD0bLcVGxMj6GfKsWOV4g7gBnKJgzFWUFjIv2Dt2jVqtXrs369IT/fz8+N5YG/v9ZoTtS4NN0Z8fJzji3t6eq52d4s7gBvIKI76htP8X8FJ/v7py5aN/Xu712CLSkpEv78yKjLC8cVNZz4V99ndQ0Zx2Gy2wqJi/jU5Y3ZL5yUk8F/XMJvNpWVlLs42VlBQkOOLL168KPoAbiCjOBhjhw9XGI1GngV33nHHnLv+6402G3LsHMFWHq/q79e5PtsoQTMExPHZlSuiD+AG8orja73+yAcf8K/JGXE+w5H71A8V2NmVcU5AQIDji/lPAcuWvOJgjNl9n1na4kVTp0699edsbRb/IcO5lpa29nbRhvsXtVot6Npvv2QXTiUluzi6ui5//PEnPAu8vLwyH1jH/vneuDX8Wzt4SJKXDaE32gwNDUkxhtRkFwdj7JC9Y9qsB9Z5eXmtTE/39+c7gu3r66uuqRF1tH/y9r7NETUP87D419PdQI5xnDx1qqenh2dBQEDAkrTFdo9gi0tKh6X5rgybzYLWe7vxxk8RyTEOq9VWWFzCv+YHTz4RFcV/BDtcXCr+EewtRoHXz2577k7+5BgHY6z8cIXRyPcNsPuuoarq6r6+PlGH+g+TyWS1CrgnfvLkyRJNIimZxnHz5s0Pj33kyhbs7ri4qL9fQHnTpk2VbhLpyDQO5toV9ta2tpaWVhGHGavniy8cXxw23p8E4Rz5xnHx0iWn77WU6MTXSF8IicOJNy7IgXzjYM5eZ+/r7z9eVSX6MKNcutTp+OK599wj3STSkXUctXUnv/zyK6GPKi0tM5slP69wrqXF8cUhIcGhISHSDSMRWcdhtVqLSuwc044yPDxs93ZlUbS0tgm6s2v5sqXSDSMRWcfBGCsrKxd07rm65oR7rnINDg42nxXwVpGMjFWKewO+3OMYuHHjo0oBN9jZvZ1MRNXVAs7NzwwNXZKWJtkskpB7HEzIMW17+/nms+ckHWak6poTgk6FPb71MWWdKlVAHOc7Oj5tbnZkpdQnvka51ttbd1LAp9rNDA3d8ugj0s0jOgXEwRw7b6HT6Y5VHnfDMCPlHcgXtP7hhzanpLj7EyKcpow4ak7U2n2ba0lZuVngxVLXNTefFXSmTqVS7d65Q9zPDJ04ccKTT3x/zpy7RNzmLcqIw2KxFJfwHaBaLJYS3gXSeXnvXkHHtBzH/fbXLy1edL/rT+3t7ZWtzcr7y7sPbtzg5Sn+XQHKiIMxVlpWxvPCcKK29qtr19w5z79duHCRP9yxOI57YXfuD7dvmzBhgnNP6uvru/nBTQfef2/7tqcF3c0qiGJuQunv1y1Z7tAHMbjfa6+/Pi8hQdCn1KlUKm1m5tK0tP35B8vKD+t0OkcexXGapMTE5cuWLkxdiM8EUwaj0fT8zp1vvvGG0G/YpEmTvvP41q1bvvVJY2NjY1P7+fOff35VN6AzGk0qlUqtVvv7+U0PnB4SHBIdFRkbGxsfF+fEL+JwGuIQR1fX5R25uS++sMfT01PoYz09Pe9NSro3KUmKwVyhmH0O+Tt1qn7PL14UdFpM5vDKIaZjlZVWq+X5n/5EWWdCKXjlENnxquqntm13cAdT5hCH+M6eO/fIlq31DcI+eFmGEIckrl+//uxzP37xly9J8R5ut0EcEjpccWTj5ofe3vcn/o/Dc1FT05mf78x18NqkINghldbg4ODb7+zbfyB/5Yr0rMwHRLzTeGBgoKq6prCo+FKngLtZBUEc7mAwGIqKS4qKS6IiI1NSklOSk+NiY5w4I2Kz2TouXKivb6hvON3S2iL1YbOEv3QYeKjV6uioyNl3zg6bFTYjcHpgYGDAlCkajtOoNWq1emhoyDBoMOj1er1BNzBw+fLlzq6uzs6uzq7O/5HfSA1Khx1SICEOICEOICEOICEOICEOICEOICEOICEOICEOICnywtukdQJ+W6d8DJQ1jvcIwijvlUOhZTAFTq6wOBT39R1FWfMrLA5wJ8QBJMQBJIXFobgd/lGUNb/C4mBK+/qOpLjJcZsgkJT3ygFugziAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiAhDiA9A9Og5BACd+yagAAAABJRU5ErkJggg==">
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  html, body { margin: 0; padding: 0; background: #EEF1EE; -webkit-tap-highlight-color: transparent; }
+  input, select { font-family: inherit; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useCallback, useMemo } = React;
+
+/* ---------------- ARMAZENAMENTO LOCAL (substitui window.storage do Claude) ---------------- */
+
+const localDb = {
+  async get(key) {
+    try {
+      const raw = localStorage.getItem("minhas-contas::" + key);
+      if (raw === null) return null;
+      return { key, value: raw };
+    } catch (e) {
+      return null;
+    }
+  },
+  async set(key, value) {
+    try {
+      localStorage.setItem("minhas-contas::" + key, value);
+      return { key, value };
+    } catch (e) {
+      return null;
+    }
+  },
+};
+
+/* ---------------- ÍCONES (SVG simples, sem dependência externa) ---------------- */
+
+function Icon({ children, size = 16, color = "currentColor", className = "" }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {children}
+    </svg>
+  );
+}
+const Plus = (p) => <Icon {...p}><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></Icon>;
+const Trash2 = (p) => <Icon {...p}><polyline points="3 6 5 6 21 6" /><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" /><path d="M10 11v6" /><path d="M14 11v6" /><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" /></Icon>;
+const ChevronLeft = (p) => <Icon {...p}><polyline points="15 18 9 12 15 6" /></Icon>;
+const ChevronRight = (p) => <Icon {...p}><polyline points="9 18 15 12 9 6" /></Icon>;
+const Wallet = (p) => <Icon {...p}><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4" /><path d="M4 6v12a2 2 0 0 0 2 2h14v-4" /><path d="M18 12a2 2 0 0 0 0 4h4v-4Z" /></Icon>;
+const TrendingUp = (p) => <Icon {...p}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></Icon>;
+const TrendingDown = (p) => <Icon {...p}><polyline points="23 18 13.5 8.5 8.5 13.5 1 6" /><polyline points="17 18 23 18 23 12" /></Icon>;
+const Receipt = (p) => <Icon {...p}><path d="M4 2h16v20l-3-2-3 2-3-2-3 2-3-2-1 2Z" /><line x1="8" y1="7" x2="16" y2="7" /><line x1="8" y1="11" x2="16" y2="11" /><line x1="8" y1="15" x2="13" y2="15" /></Icon>;
+const Settings2 = (p) => <Icon {...p}><line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" /><line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" /><line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" /><line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" /></Icon>;
+const Loader2 = (p) => <Icon {...p}><path d="M21 12a9 9 0 1 1-6.219-8.56" /></Icon>;
+const Check = (p) => <Icon {...p}><polyline points="20 6 9 17 4 12" /></Icon>;
+
+/* ---------------- CONFIG ---------------- */
+
+const STORAGE_KEY = "minhas-contas-data";
+
+const COLORS = {
+  bg: "#EEF1EE",
+  surface: "#FFFFFF",
+  border: "#D9DED9",
+  text: "#20302B",
+  muted: "#6E7A73",
+  income: "#2F7D5C",
+  incomeSoft: "#E4F1EA",
+  expense: "#AF4B3C",
+  expenseSoft: "#F6E7E3",
+  tax: "#A2792E",
+  taxSoft: "#F3E9D5",
+};
+
+const CATEGORIES_EXPENSE = ["Moradia", "Transporte", "Alimentação", "Saúde", "Lazer", "Educação", "Outros"];
+const CATEGORIES_INCOME = ["Salário", "Freelance", "Rendimentos", "Outros"];
+
+const defaultData = () => ({
+  transactions: [],
+  contasFixas: [
+    { id: uid(), nome: "CC C6 (WavesNow, Gympass, Spotify...)", valor: 2500.00, dia: 25, categoria: "Lazer" },
+    { id: uid(), nome: "Telefone - Vivo / Cesta Universitária", valor: 70.00, dia: 6, categoria: "Outros" },
+    { id: uid(), nome: "Cartão Porto Seguro - Seguro Carro", valor: 321.00, dia: 20, categoria: "Transporte" },
+    { id: uid(), nome: "HVCon - Honorários contabilidade", valor: 241.00, dia: 10, categoria: "Outros" },
+    { id: uid(), nome: "Boleto Rottas", valor: 842.00, dia: 20, categoria: "Outros" },
+    { id: uid(), nome: "Plano de Saúde - LevMed + Mãe", valor: 1220.87, dia: 10, categoria: "Saúde" },
+    { id: uid(), nome: "Aluguel + taxas (55% - suíte)", valor: 1047.20, dia: 10, categoria: "Moradia" },
+    { id: uid(), nome: "Condomínio (55% - suíte)", valor: 279.95, dia: 10, categoria: "Moradia" },
+    { id: uid(), nome: "Celesc - Luz (50%)", valor: 105.33, dia: 10, categoria: "Moradia" },
+    { id: uid(), nome: "Oi - Internet (50%)", valor: 64.99, dia: 7, categoria: "Moradia" },
+  ],
+  contasAvulsas: [],
+  notas: [],
+  settings: { aliquotaPadrao: 6, diaImposto: 20 },
+});
+
+function uid() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+function currentMonthKey() {
+  return new Date().toISOString().slice(0, 7);
+}
+function formatBRL(n) {
+  return (Number(n) || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+function monthLabel(monthKey) {
+  const [y, m] = monthKey.split("-").map(Number);
+  const d = new Date(y, m - 1, 1);
+  return d.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+}
+function shiftMonth(monthKey, delta) {
+  const [y, m] = monthKey.split("-").map(Number);
+  const d = new Date(y, m - 1 + delta, 1);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+}
+function last6Months(monthKey) {
+  const arr = [];
+  for (let i = 5; i >= 0; i--) arr.push(shiftMonth(monthKey, -i));
+  return arr;
+}
+
+/* ---------------- APP ---------------- */
+
+function App() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [saveError, setSaveError] = useState(false);
+  const [tab, setTab] = useState("resumo");
+  const [month, setMonth] = useState(currentMonthKey());
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await localDb.get(STORAGE_KEY);
+        if (res && res.value) {
+          const parsed = JSON.parse(res.value);
+          setData({ ...defaultData(), ...parsed, contasAvulsas: parsed.contasAvulsas || [] });
+        } else {
+          setData(defaultData());
+        }
+      } catch (e) {
+        setData(defaultData());
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const persist = useCallback(async (next) => {
+    setData(next);
+    try {
+      const res = await localDb.set(STORAGE_KEY, JSON.stringify(next));
+      setSaveError(!res);
+    } catch (e) {
+      setSaveError(true);
+    }
+  }, []);
+
+  if (loading || !data) {
+    return (
+      <div style={{ background: COLORS.bg, minHeight: "100vh" }} className="flex items-center justify-center">
+        <Loader2 className="animate-spin" size={28} color={COLORS.muted} />
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ background: COLORS.bg, minHeight: "100vh", color: COLORS.text, fontFamily: "'Inter', sans-serif" }}>
+      <div className="max-w-2xl mx-auto px-4 pt-8 pb-24">
+        <Header month={month} setMonth={setMonth} saveError={saveError} />
+        <TabBar tab={tab} setTab={setTab} />
+        {tab === "resumo" && <Resumo data={data} month={month} />}
+        {tab === "lancamentos" && <Lancamentos data={data} persist={persist} month={month} />}
+        {tab === "fixas" && <ContasFixas data={data} persist={persist} month={month} />}
+        {tab === "notas" && <NotasFiscais data={data} persist={persist} month={month} />}
+      </div>
+    </div>
+  );
+}
+
+function Header({ month, setMonth, saveError }) {
+  return (
+    <div className="mb-6">
+      <div className="flex items-baseline justify-between">
+        <h1 style={{ fontFamily: "'Fraunces', serif", fontWeight: 600 }} className="text-3xl">
+          Minhas Contas
+        </h1>
+        {saveError && (
+          <span className="text-xs" style={{ color: COLORS.expense }}>não salvou — tente de novo</span>
+        )}
+      </div>
+      <div
+        className="mt-4 flex items-center justify-between rounded-xl px-3 py-2"
+        style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}
+      >
+        <button onClick={() => setMonth(shiftMonth(month, -1))} className="p-1.5 rounded-lg hover:bg-black/5" aria-label="Mês anterior">
+          <ChevronLeft size={18} />
+        </button>
+        <span className="capitalize font-medium" style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 14 }}>
+          {monthLabel(month)}
+        </span>
+        <button onClick={() => setMonth(shiftMonth(month, 1))} className="p-1.5 rounded-lg hover:bg-black/5" aria-label="Próximo mês">
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function TabBar({ tab, setTab }) {
+  const tabs = [
+    { id: "resumo", label: "Resumo" },
+    { id: "lancamentos", label: "Lançamentos" },
+    { id: "fixas", label: "Contas fixas" },
+    { id: "notas", label: "Notas fiscais" },
+  ];
+  return (
+    <div className="flex gap-1 mb-6 border-b" style={{ borderColor: COLORS.border }}>
+      {tabs.map((t) => (
+        <button
+          key={t.id}
+          onClick={() => setTab(t.id)}
+          className="px-3 py-2.5 text-sm font-medium relative -mb-px"
+          style={{
+            color: tab === t.id ? COLORS.text : COLORS.muted,
+            borderBottom: tab === t.id ? `2px solid ${COLORS.income}` : "2px solid transparent",
+          }}
+        >
+          {t.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/* ---------------- RESUMO ---------------- */
+
+function SimpleBarChart({ chartData }) {
+  const max = Math.max(1, ...chartData.map((d) => Math.max(d.Receitas, d.Despesas)));
+  const H = 180, W = 100 / chartData.length;
+  return (
+    <div>
+      <div className="flex items-end gap-1" style={{ height: H }}>
+        {chartData.map((d, i) => (
+          <div key={i} className="flex-1 flex items-end justify-center gap-0.5" style={{ height: H }}>
+            <div title={formatBRL(d.Receitas)} style={{ width: "40%", height: `${(d.Receitas / max) * 100}%`, background: COLORS.income, borderRadius: "3px 3px 0 0", minHeight: d.Receitas > 0 ? 2 : 0 }} />
+            <div title={formatBRL(d.Despesas)} style={{ width: "40%", height: `${(d.Despesas / max) * 100}%`, background: COLORS.expense, borderRadius: "3px 3px 0 0", minHeight: d.Despesas > 0 ? 2 : 0 }} />
+          </div>
+        ))}
+      </div>
+      <div className="flex gap-1 mt-1">
+        {chartData.map((d, i) => (
+          <div key={i} className="flex-1 text-center text-[11px]" style={{ color: COLORS.muted }}>{d.mes}</div>
+        ))}
+      </div>
+      <div className="flex items-center gap-4 mt-3 justify-center text-xs" style={{ color: COLORS.muted }}>
+        <span className="flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.income, borderRadius: 2, display: "inline-block" }} />Receitas</span>
+        <span className="flex items-center gap-1.5"><span style={{ width: 10, height: 10, background: COLORS.expense, borderRadius: 2, display: "inline-block" }} />Despesas</span>
+      </div>
+    </div>
+  );
+}
+
+function Resumo({ data, month }) {
+  const monthTx = data.transactions.filter((t) => t.date.startsWith(month));
+  const receitas = monthTx.filter((t) => t.type === "receita").reduce((s, t) => s + Number(t.amount), 0);
+  const despesas = monthTx.filter((t) => t.type === "despesa").reduce((s, t) => s + Number(t.amount), 0);
+  const saldo = receitas - despesas;
+
+  const notasDoMes = data.notas.filter((n) => n.mes === month);
+  const impostoMes = notasDoMes.reduce((s, n) => s + (Number(n.valor) * Number(n.aliquota)) / 100, 0);
+
+  const ano = month.slice(0, 4);
+  const impostoAno = data.notas
+    .filter((n) => n.mes.startsWith(ano))
+    .reduce((s, n) => s + (Number(n.valor) * Number(n.aliquota)) / 100, 0);
+
+  const months = last6Months(month);
+  const chartData = months.map((m) => {
+    const tx = data.transactions.filter((t) => t.date.startsWith(m));
+    return {
+      mes: m.slice(5) + "/" + m.slice(2, 4),
+      Receitas: tx.filter((t) => t.type === "receita").reduce((s, t) => s + Number(t.amount), 0),
+      Despesas: tx.filter((t) => t.type === "despesa").reduce((s, t) => s + Number(t.amount), 0),
+    };
+  });
+
+  return (
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-3">
+        <StatCard icon={<TrendingUp size={16} />} label="Receitas do mês" value={receitas} color={COLORS.income} soft={COLORS.incomeSoft} />
+        <StatCard icon={<TrendingDown size={16} />} label="Despesas do mês" value={despesas} color={COLORS.expense} soft={COLORS.expenseSoft} />
+        <StatCard icon={<Wallet size={16} />} label="Saldo do mês" value={saldo} color={saldo >= 0 ? COLORS.income : COLORS.expense} soft={saldo >= 0 ? COLORS.incomeSoft : COLORS.expenseSoft} />
+        <StatCard icon={<Receipt size={16} />} label="Imposto s/ NF deste mês (vence mês que vem)" value={impostoMes} color={COLORS.tax} soft={COLORS.taxSoft} />
+      </div>
+
+      <div
+        className="rounded-xl p-4"
+        style={{ background: COLORS.surface, border: `1px dashed ${COLORS.border}` }}
+      >
+        <div className="flex justify-between items-center text-sm mb-1">
+          <span style={{ color: COLORS.muted }}>Imposto acumulado em {ano} a guardar</span>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, color: COLORS.tax }}>
+            {formatBRL(impostoAno)}
+          </span>
+        </div>
+        <p className="text-xs" style={{ color: COLORS.muted }}>
+          Soma do imposto calculado sobre todas as notas fiscais emitidas no ano.
+        </p>
+      </div>
+
+      <div className="rounded-xl p-4" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+        <h3 className="text-sm font-medium mb-3" style={{ color: COLORS.muted }}>Últimos 6 meses</h3>
+        <SimpleBarChart chartData={chartData} />
+      </div>
+    </div>
+  );
+}
+
+function StatCard({ icon, label, value, color, soft }) {
+  return (
+    <div className="rounded-xl p-3.5" style={{ background: soft, border: `1px solid ${color}30` }}>
+      <div className="flex items-center gap-1.5 mb-2" style={{ color }}>
+        {icon}
+        <span className="text-xs font-medium" style={{ color: COLORS.muted }}>{label}</span>
+      </div>
+      <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, fontSize: 18, color: COLORS.text }}>
+        {formatBRL(value)}
+      </div>
+    </div>
+  );
+}
+
+/* ---------------- LANÇAMENTOS ---------------- */
+
+function Lancamentos({ data, persist, month }) {
+  const [form, setForm] = useState({ desc: "", amount: "", type: "despesa", category: CATEGORIES_EXPENSE[0], date: todayISO() });
+
+  const monthTx = data.transactions
+    .filter((t) => t.date.startsWith(month))
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  const addTx = () => {
+    if (!form.desc.trim() || !form.amount) return;
+    const tx = { id: uid(), desc: form.desc.trim(), amount: Number(form.amount), type: form.type, category: form.category, date: form.date };
+    persist({ ...data, transactions: [...data.transactions, tx] });
+    setForm({ desc: "", amount: "", type: form.type, category: form.type === "despesa" ? CATEGORIES_EXPENSE[0] : CATEGORIES_INCOME[0], date: todayISO() });
+  };
+
+  const removeTx = (id) => {
+    persist({ ...data, transactions: data.transactions.filter((t) => t.id !== id) });
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="rounded-xl p-4 space-y-3" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setForm((f) => ({ ...f, type: "despesa", category: CATEGORIES_EXPENSE[0] }))}
+            className="flex-1 py-2 rounded-lg text-sm font-medium"
+            style={{ background: form.type === "despesa" ? COLORS.expenseSoft : "transparent", color: form.type === "despesa" ? COLORS.expense : COLORS.muted, border: `1px solid ${form.type === "despesa" ? COLORS.expense : COLORS.border}` }}
+          >
+            Despesa
+          </button>
+          <button
+            onClick={() => setForm((f) => ({ ...f, type: "receita", category: CATEGORIES_INCOME[0] }))}
+            className="flex-1 py-2 rounded-lg text-sm font-medium"
+            style={{ background: form.type === "receita" ? COLORS.incomeSoft : "transparent", color: form.type === "receita" ? COLORS.income : COLORS.muted, border: `1px solid ${form.type === "receita" ? COLORS.income : COLORS.border}` }}
+          >
+            Receita
+          </button>
+        </div>
+        <input
+          placeholder="Descrição"
+          value={form.desc}
+          onChange={(e) => setForm((f) => ({ ...f, desc: e.target.value }))}
+          className="w-full px-3 py-2 rounded-lg text-sm outline-none"
+          style={{ border: `1px solid ${COLORS.border}` }}
+        />
+        <div className="flex gap-2">
+          <input
+            type="number"
+            placeholder="Valor"
+            value={form.amount}
+            onChange={(e) => setForm((f) => ({ ...f, amount: e.target.value }))}
+            className="w-1/3 px-3 py-2 rounded-lg text-sm outline-none"
+            style={{ border: `1px solid ${COLORS.border}`, fontFamily: "'IBM Plex Mono', monospace" }}
+          />
+          <select
+            value={form.category}
+            onChange={(e) => setForm((f) => ({ ...f, category: e.target.value }))}
+            className="flex-1 px-3 py-2 rounded-lg text-sm outline-none"
+            style={{ border: `1px solid ${COLORS.border}` }}
+          >
+            {(form.type === "despesa" ? CATEGORIES_EXPENSE : CATEGORIES_INCOME).map((c) => (
+              <option key={c} value={c}>{c}</option>
+            ))}
+          </select>
+          <input
+            type="date"
+            value={form.date}
+            onChange={(e) => setForm((f) => ({ ...f, date: e.target.value }))}
+            className="px-2 py-2 rounded-lg text-sm outline-none"
+            style={{ border: `1px solid ${COLORS.border}` }}
+          />
+        </div>
+        <button
+          onClick={addTx}
+          className="w-full py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-1.5 text-white"
+          style={{ background: COLORS.text }}
+        >
+          <Plus size={16} /> Adicionar
+        </button>
+      </div>
+
+      <div className="space-y-1.5">
+        {monthTx.length === 0 && (
+          <p className="text-center text-sm py-8" style={{ color: COLORS.muted }}>Nenhum lançamento neste mês ainda.</p>
+        )}
+        {monthTx.map((t) => (
+          <div key={t.id} className="flex items-center justify-between rounded-lg px-3.5 py-2.5" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+            <div>
+              <div className="text-sm font-medium">{t.desc}</div>
+              <div className="text-xs" style={{ color: COLORS.muted }}>{t.category} · {new Date(t.date + "T00:00").toLocaleDateString("pt-BR")}</div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, color: t.type === "receita" ? COLORS.income : COLORS.expense }}>
+                {t.type === "receita" ? "+" : "-"}{formatBRL(t.amount)}
+              </span>
+              <button onClick={() => removeTx(t.id)} style={{ color: COLORS.muted }} aria-label="Excluir">
+                <Trash2 size={15} />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function EditableValor({ value, onCommit }) {
+  const [val, setVal] = useState(String(value));
+  useEffect(() => setVal(String(value)), [value]);
+  return (
+    <input
+      type="number"
+      step="0.01"
+      value={val}
+      onChange={(e) => setVal(e.target.value)}
+      onBlur={() => {
+        const n = Number(val);
+        if (!isNaN(n) && n >= 0) onCommit(n);
+        else setVal(String(value));
+      }}
+      className="w-[76px] text-right bg-transparent outline-none rounded px-1 py-0.5 border border-transparent focus:border-current"
+      style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, fontSize: 13.5, color: "inherit" }}
+    />
+  );
+}
+
+/* ---------------- CONTAS FIXAS ---------------- */
+
+function ContasFixas({ data, persist, month }) {
+  const [form, setForm] = useState({ nome: "", valor: "", dia: "", categoria: CATEGORIES_EXPENSE[0] });
+
+  const addFixa = () => {
+    if (!form.nome.trim() || !form.valor) return;
+    const fixa = { id: uid(), nome: form.nome.trim(), valor: Number(form.valor), dia: Number(form.dia) || 1, categoria: form.categoria };
+    persist({ ...data, contasFixas: [...data.contasFixas, fixa] });
+    setForm({ nome: "", valor: "", dia: "", categoria: CATEGORIES_EXPENSE[0] });
+  };
+
+  const isPaidItem = (item) =>
+    data.transactions.some(
+      (t) =>
+        t.date.startsWith(month) &&
+        (item.kind === "fixa" ? t.fixedId === item.id : t.avulsaId === item.id)
+    );
+
+  const togglePaid = (item) => {
+    if (isPaidItem(item)) {
+      persist({
+        ...data,
+        transactions: data.transactions.filter(
+          (t) => !(t.date.startsWith(month) && (item.kind === "fixa" ? t.fixedId === item.id : t.avulsaId === item.id))
+        ),
+      });
+    } else {
+      const date = `${month}-${String(item.dia).padStart(2, "0")}`;
+      const tx = {
+        id: uid(),
+        desc: item.nome,
+        amount: item.valor,
+        type: "despesa",
+        category: item.categoria,
+        date,
+        ...(item.kind === "fixa" ? { fixedId: item.id } : { avulsaId: item.id }),
+      };
+      persist({ ...data, transactions: [...data.transactions, tx] });
+    }
+  };
+
+  const removeItem = (item) => {
+    if (item.kind === "fixa") {
+      persist({
+        ...data,
+        contasFixas: data.contasFixas.filter((f) => f.id !== item.id),
+        transactions: data.transactions.filter((t) => t.fixedId !== item.id),
+      });
+    } else {
+      persist({
+        ...data,
+        contasAvulsas: data.contasAvulsas.filter((a) => a.id !== item.id),
+        transactions: data.transactions.filter((t) => t.avulsaId !== item.id),
+      });
+    }
+  };
+
+  const updateValor = (item, novoValor) => {
+    const contasFixas = item.kind === "fixa"
+      ? data.contasFixas.map((f) => (f.id === item.id ? { ...f, valor: novoValor } : f))
+      : data.contasFixas;
+    const contasAvulsas = item.kind === "avulsa"
+      ? data.contasAvulsas.map((a) => (a.id === item.id ? { ...a, valor: novoValor } : a))
+      : data.contasAvulsas;
+    const transactions = data.transactions.map((t) => {
+      const matches = item.kind === "fixa" ? t.fixedId === item.id : t.avulsaId === item.id;
+      return matches && t.date.startsWith(month) ? { ...t, amount: novoValor } : t;
+    });
+    persist({ ...data, contasFixas, contasAvulsas, transactions });
+  };
+
+  const itemsMes = useMemo(() => {
+    const fixas = data.contasFixas.map((f) => ({ ...f, kind: "fixa" }));
+    const avulsas = data.contasAvulsas.filter((a) => a.mes === month).map((a) => ({ ...a, kind: "avulsa" }));
+    return [...fixas, ...avulsas].sort((a, b) => a.dia - b.dia);
+  }, [data.contasFixas, data.contasAvulsas, month]);
+
+  const totalMes = itemsMes.reduce((s, f) => s + Number(f.valor), 0);
+  const pagas = itemsMes.filter((f) => isPaidItem(f)).reduce((s, f) => s + Number(f.valor), 0);
+  const aPagar = totalMes - pagas;
+  const isCurrentMonth = month === currentMonthKey();
+  const todayDay = new Date().getDate();
+
+  return (
+    <div className="space-y-4">
+      <div className="rounded-xl p-4 space-y-3" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+        <input
+          placeholder="Nome da conta (ex: Aluguel)"
+          value={form.nome}
+          onChange={(e) => setForm((f) => ({ ...f, nome: e.target.value }))}
+          className="w-full px-3 py-2 rounded-lg text-sm outline-none"
+          style={{ border: `1px solid ${COLORS.border}` }}
+        />
+        <div className="flex gap-2">
+          <input
+            type="number"
+            placeholder="Valor"
+            value={form.valor}
+            onChange={(e) => setForm((f) => ({ ...f, valor: e.target.value }))}
+            className="w-1/3 px-3 py-2 rounded-lg text-sm outline-none"
+            style={{ border: `1px solid ${COLORS.border}`, fontFamily: "'IBM Plex Mono', monospace" }}
+          />
+          <input
+            type="number"
+            placeholder="Dia venc."
+            min="1" max="31"
+            value={form.dia}
+            onChange={(e) => setForm((f) => ({ ...f, dia: e.target.value }))}
+            className="w-1/4 px-3 py-2 rounded-lg text-sm outline-none"
+            style={{ border: `1px solid ${COLORS.border}` }}
+          />
+          <select
+            value={form.categoria}
+            onChange={(e) => setForm((f) => ({ ...f, categoria: e.target.value }))}
+            className="flex-1 px-3 py-2 rounded-lg text-sm outline-none"
+            style={{ border: `1px solid ${COLORS.border}` }}
+          >
+            {CATEGORIES_EXPENSE.map((c) => <option key={c} value={c}>{c}</option>)}
+          </select>
+        </div>
+        <button onClick={addFixa} className="w-full py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-1.5 text-white" style={{ background: COLORS.text }}>
+          <Plus size={16} /> Adicionar conta fixa
+        </button>
+      </div>
+
+      {itemsMes.length > 0 && (
+        <div className="grid grid-cols-2 gap-3">
+          <div className="rounded-lg px-3 py-2" style={{ background: COLORS.expenseSoft, border: `1px solid ${COLORS.expense}30` }}>
+            <div className="text-xs" style={{ color: COLORS.muted }}>A pagar</div>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 700, color: COLORS.expense }}>{formatBRL(aPagar)}</div>
+          </div>
+          <div className="rounded-lg px-3 py-2" style={{ background: COLORS.incomeSoft, border: `1px solid ${COLORS.income}30` }}>
+            <div className="text-xs" style={{ color: COLORS.muted }}>Pago</div>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 700, color: COLORS.income }}>{formatBRL(pagas)}</div>
+          </div>
+        </div>
+      )}
+
+      <div className="space-y-1.5">
+        {itemsMes.length === 0 && (
+          <p className="text-center text-sm py-8" style={{ color: COLORS.muted }}>Nenhuma conta cadastrada.</p>
+        )}
+        {itemsMes.map((f) => {
+          const paid = isPaidItem(f);
+          const overdue = !paid && isCurrentMonth && f.dia < todayDay;
+          return (
+            <div
+              key={f.id}
+              className="flex items-center justify-between rounded-lg px-3.5 py-2.5"
+              style={{ background: COLORS.surface, border: `1px solid ${overdue ? COLORS.expense + "70" : COLORS.border}` }}
+            >
+              <div>
+                <div className="text-sm font-medium flex items-center gap-1.5" style={{ opacity: paid ? 0.6 : 1 }}>
+                  {f.nome}
+                  {f.kind === "avulsa" && (
+                    <span className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold" style={{ background: COLORS.taxSoft, color: COLORS.tax }}>
+                      NF
+                    </span>
+                  )}
+                </div>
+                <div className="text-xs" style={{ color: overdue ? COLORS.expense : COLORS.muted }}>
+                  {f.categoria} · vence dia {f.dia}{overdue ? " · vencida" : ""}
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <EditableValor value={f.valor} onCommit={(v) => updateValor(f, v)} />
+                <button
+                  onClick={() => togglePaid(f)}
+                  className="px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap"
+                  style={{
+                    background: paid ? COLORS.incomeSoft : overdue ? COLORS.expenseSoft : "transparent",
+                    color: paid ? COLORS.income : overdue ? COLORS.expense : COLORS.muted,
+                    border: `1px solid ${paid ? COLORS.income : overdue ? COLORS.expense : COLORS.border}`,
+                  }}
+                >
+                  {paid ? "Pago" : "A pagar"}
+                </button>
+                <button onClick={() => removeItem(f)} style={{ color: COLORS.muted }} aria-label="Excluir">
+                  <Trash2 size={15} />
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function recalcAvulsaImposto(data, mesOrigem) {
+  const notasDoMes = data.notas.filter((n) => n.mes === mesOrigem);
+  const totalImposto = notasDoMes.reduce((s, n) => s + (Number(n.valor) * Number(n.aliquota)) / 100, 0);
+  const mesDevido = shiftMonth(mesOrigem, 1);
+  const existente = data.contasAvulsas.find((a) => a.mesOrigem === mesOrigem);
+  const outras = data.contasAvulsas.filter((a) => a.mesOrigem !== mesOrigem);
+  if (totalImposto <= 0) return outras;
+  const avulsa = {
+    id: existente?.id || uid(),
+    mesOrigem,
+    nome: `Imposto s/ NFs de ${monthLabel(mesOrigem)}`,
+    valor: totalImposto,
+    dia: data.settings.diaImposto || 20,
+    categoria: "Outros",
+    mes: mesDevido,
+  };
+  return [...outras, avulsa];
+}
+
+/* ---------------- NOTAS FISCAIS ---------------- */
+
+function NotasFiscais({ data, persist, month }) {
+  const [form, setForm] = useState({ desc: "", valor: "", aliquota: String(data.settings.aliquotaPadrao) });
+
+  const mesDevido = shiftMonth(month, 1);
+  const notasDoMes = data.notas.filter((n) => n.mes === month).sort((a, b) => (a.criadoEm || 0) - (b.criadoEm || 0));
+  const totalEmitido = notasDoMes.reduce((s, n) => s + Number(n.valor), 0);
+  const totalImposto = notasDoMes.reduce((s, n) => s + (Number(n.valor) * Number(n.aliquota)) / 100, 0);
+
+  const addNota = () => {
+    if (!form.valor) return;
+    const nova = {
+      id: uid(),
+      mes: month,
+      desc: form.desc.trim(),
+      valor: Number(form.valor),
+      aliquota: Number(form.aliquota),
+      criadoEm: Date.now(),
+    };
+    const notas = [...data.notas, nova];
+    const contasAvulsas = recalcAvulsaImposto({ ...data, notas }, month);
+    persist({ ...data, notas, contasAvulsas });
+    setForm({ desc: "", valor: "", aliquota: String(data.settings.aliquotaPadrao) });
+  };
+
+  const removeNota = (id) => {
+    const notas = data.notas.filter((n) => n.id !== id);
+    const contasAvulsas = recalcAvulsaImposto({ ...data, notas }, month);
+    persist({ ...data, notas, contasAvulsas });
+  };
+
+  const updateSettings = (key, v) => {
+    persist({ ...data, settings: { ...data.settings, [key]: Number(v) } });
+  };
+
+  const meses = [...new Set(data.notas.map((n) => n.mes))].sort((a, b) => b.localeCompare(a));
+
+  return (
+    <div className="space-y-4">
+      <div className="rounded-xl p-4 space-y-3" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+        <h3 className="text-sm font-medium" style={{ color: COLORS.muted }}>Nova nota — {monthLabel(month)}</h3>
+        <input
+          placeholder="Descrição (opcional, ex: Cliente X)"
+          value={form.desc}
+          onChange={(e) => setForm((f) => ({ ...f, desc: e.target.value }))}
+          className="w-full px-3 py-2 rounded-lg text-sm outline-none"
+          style={{ border: `1px solid ${COLORS.border}` }}
+        />
+        <div className="flex gap-2">
+          <div className="flex-1">
+            <label className="text-xs" style={{ color: COLORS.muted }}>Valor emitido</label>
+            <input
+              type="number"
+              placeholder="0,00"
+              value={form.valor}
+              onChange={(e) => setForm((f) => ({ ...f, valor: e.target.value }))}
+              className="w-full px-3 py-2 rounded-lg text-sm outline-none mt-1"
+              style={{ border: `1px solid ${COLORS.border}`, fontFamily: "'IBM Plex Mono', monospace" }}
+            />
+          </div>
+          <div className="w-24">
+            <label className="text-xs" style={{ color: COLORS.muted }}>Imposto %</label>
+            <input
+              type="number"
+              value={form.aliquota}
+              onChange={(e) => setForm((f) => ({ ...f, aliquota: e.target.value }))}
+              className="w-full px-3 py-2 rounded-lg text-sm outline-none mt-1"
+              style={{ border: `1px solid ${COLORS.border}`, fontFamily: "'IBM Plex Mono', monospace" }}
+            />
+          </div>
+        </div>
+        <button onClick={addNota} className="w-full py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-1.5 text-white" style={{ background: COLORS.text }}>
+          <Plus size={16} /> Adicionar nota
+        </button>
+      </div>
+
+      {notasDoMes.length > 0 && (
+        <div className="space-y-1.5">
+          {notasDoMes.map((n) => (
+            <div key={n.id} className="flex items-center justify-between rounded-lg px-3.5 py-2.5" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+              <div>
+                <div className="text-sm font-medium">{n.desc || "Nota fiscal"}</div>
+                <div className="text-xs" style={{ color: COLORS.muted }}>{formatBRL(n.valor)} · imposto {n.aliquota}%</div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, color: COLORS.tax }}>
+                  {formatBRL((Number(n.valor) * Number(n.aliquota)) / 100)}
+                </span>
+                <button onClick={() => removeNota(n.id)} style={{ color: COLORS.muted }} aria-label="Excluir">
+                  <Trash2 size={15} />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="rounded-xl p-4 space-y-2" style={{ background: COLORS.taxSoft, border: `1px dashed ${COLORS.tax}60` }}>
+        <div className="flex justify-between text-sm">
+          <span style={{ color: COLORS.tax }}>Total emitido em {monthLabel(month)}</span>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, color: COLORS.tax }}>{formatBRL(totalEmitido)}</span>
+        </div>
+        <div className="flex justify-between text-sm">
+          <span style={{ color: COLORS.tax }}>Imposto a pagar em {monthLabel(mesDevido)}</span>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 700, color: COLORS.tax }}>{formatBRL(totalImposto)}</span>
+        </div>
+        <p className="text-xs pt-1" style={{ color: COLORS.tax }}>
+          A soma do imposto de todas as notas do mês aparece como uma única conta "A pagar" na aba Contas fixas, no dia {data.settings.diaImposto || 20} de {monthLabel(mesDevido)}.
+        </p>
+      </div>
+
+      <div className="rounded-xl p-4 flex items-center justify-between gap-4" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+        <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.muted }}>
+          <Settings2 size={15} /> Imposto % padrão
+        </div>
+        <input
+          type="number"
+          value={data.settings.aliquotaPadrao}
+          onChange={(e) => updateSettings("aliquotaPadrao", e.target.value)}
+          className="w-16 px-2 py-1 rounded-lg text-sm text-right outline-none"
+          style={{ border: `1px solid ${COLORS.border}`, fontFamily: "'IBM Plex Mono', monospace" }}
+        />
+        <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.muted }}>
+          Dia venc.
+        </div>
+        <input
+          type="number"
+          min="1" max="31"
+          value={data.settings.diaImposto}
+          onChange={(e) => updateSettings("diaImposto", e.target.value)}
+          className="w-16 px-2 py-1 rounded-lg text-sm text-right outline-none"
+          style={{ border: `1px solid ${COLORS.border}`, fontFamily: "'IBM Plex Mono', monospace" }}
+        />
+      </div>
+
+      <div>
+        <h3 className="text-sm font-medium mb-2 px-1" style={{ color: COLORS.muted }}>Histórico por mês</h3>
+        <div className="space-y-1.5">
+          {meses.length === 0 && (
+            <p className="text-center text-sm py-8" style={{ color: COLORS.muted }}>Nenhuma nota registrada ainda.</p>
+          )}
+          {meses.map((m) => {
+            const ns = data.notas.filter((n) => n.mes === m);
+            const emitido = ns.reduce((s, n) => s + Number(n.valor), 0);
+            const imp = ns.reduce((s, n) => s + (Number(n.valor) * Number(n.aliquota)) / 100, 0);
+            return (
+              <div key={m} className="flex items-center justify-between rounded-lg px-3.5 py-2.5" style={{ background: COLORS.surface, border: `1px solid ${COLORS.border}` }}>
+                <div>
+                  <div className="text-sm font-medium capitalize">{monthLabel(m)}</div>
+                  <div className="text-xs" style={{ color: COLORS.muted }}>{ns.length} nota{ns.length > 1 ? "s" : ""} · {formatBRL(emitido)} emitido</div>
+                </div>
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 700, color: COLORS.tax }}>{formatBRL(imp)}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+</body>
+</html>
